@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Juego de Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebf3;
+            color: #d6336c;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b52b5a;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Encuentra el Corazón!</h1>
+        <p>Haz clic en el botón para encontrar el corazón escondido.</p>
+        <button onclick="findHeart()">Buscar Corazón</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function findHeart() {
+            const messages = [
+                "¡Encontraste el corazón! 💖",
+                "¡Sigue intentando! ❤️",
+                "¡Casi lo tienes! 💕",
+                "¡Un poco más! 💞",
+                "¡Te amo, Valen! Feliz 14 de febrero 💘"
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").innerText = randomMessage;
+
+            if (randomMessage.includes("Te amo")) {
+                setTimeout(() => {
+                    alert("¡Felicidades! ¡Te amo, Valen! Feliz 14 de febrero 💘");
+                }, 100);
+            }
+        }
+    </script>
+</body>
+</html>
